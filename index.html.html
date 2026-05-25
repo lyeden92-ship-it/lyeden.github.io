@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaCare Medical Website.com</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body {
+            background: #f3f7fb;
+        }
+        /* ===================== PAGE 1 ====================== */
+        
+        #page1 {
+            min-height: 100vh;
+            background: linear-gradient(to right, #f4efe7, #e8f3ff);
+            display: flex;
+        }
+        
+        .left {
+            width: 50%;
+            padding: 40px;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #1590e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        .logo h1 {
+            font-size: 45px;
+            color: #111;
+        }
+        
+        .logo span {
+            font-size: 20px;
+            letter-spacing: 6px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 35px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h2 {
+            font-size: 65px;
+            line-height: 70px;
+            margin-bottom: 20px;
+        }
+        
+        .card p {
+            color: #555;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        
+        .card ul {
+            margin-left: 20px;
+            line-height: 45px;
+            font-size: 28px;
+        }
+        
+        .bottom-bar {
+            background: #008fe6;
+            color: white;
+            margin-top: 30px;
+            border-radius: 0 0 30px 30px;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 24px;
+        }
+        
+        .Twitter_Post_1 {
+            position: absolute;
+            right: 7px;
+            top: 25px;
+            width: 340px;
+            height: 430px;
+            overflow: hidden;
+            border-radius: 30px;
+            display: block;
+        }
+        
+        .name-tag {
+            position: absolute;
+            right: 10px;
+            bottom: 170px;
+            background: #c8ff2d;
+            padding: 18px 40px;
+            border-radius: 0 0 0 30px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .right {
+            width: 50%;
+            background: linear-gradient(to bottom, #dce9f5, #a6d2ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hiring-card {
+            width: 70%;
+            background: rgba(255, 255, 255, 0.45);
+            padding: 60px;
+            border-radius: 40px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .hiring-card h1 {
+            font-size: 90px;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .start-btn {
+            background: #111;
+            color: white;
+            border: none;
+            padding: 25px 70px;
+            border-radius: 50px;
+            font-size: 40px;
+            cursor: pointer;
+            margin-bottom: 40px;
+            transition: 0.3s;
+        }
+        
+        .start-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .job-link {
+            display: block;
+            text-decoration: none;
+            color: #111;
+            font-size: 32px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        /* ===================== PAGE 2 ====================== */
+        
+        #page2 {
+            display: none;
+            min-height: 100vh;
+            background: black;
+            color: white;
+            padding: 30px;
+        }
+        
+        .page2-title {
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+        
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .column {
+            width: 35%;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+        
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        
+        textarea {
+            height: 80px;
+            resize: none;
+        }
+        
+        .finish-btn {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            background: #00b4ff;
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        /* ===================== RESULT ====================== */
+        
+        #resultPage {
+            display: none;
+            min-height: 100vh;
+            background: #f7f7f7;
+            padding: 40px;
+        }
+        
+        .notepad {
+            background: white;
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            line-height: 40px;
+        }
+        
+        .notepad h1 {
+            margin-bottom: 30px;
+        }
+        
+        .result-item {
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== PAGE 1 ==================== -->
+
+    <section id="page1">
+
+        <div class="left">
+
+            <div class="logo">
+                <div class="logo-circle">+</div>
+
+                <div>
+                    <h1>NovaCare</h1>
+                    <span>Clinic</span>
+                </div>
+            </div>
+
+            <div class="card">
+
+                <h2>Online Doctor<br>Consultation</h2>
+
+                <p>Get online consultancy from our specialist doctors</p>
+
+                <ul>
+                    <li>Medicine Facility</li>
+                    <li>Specialized Doctor</li>
+                    <li>Flexible Time</li>
+                    <li>Pathology Collection</li>
+                    <li>Homecare</li>
+                </ul>
+
+                <!-- CHANGE IMAGE -->
+                <img src="c:\Users\USER\Pictures\chin chan\Twitter_Post_1.png" class="Twitter_Post_1">
+
+                <div class="name-tag">
+                    Dr. CHHEM UDOM<br>
+                    <span style="font-size:18px;">Doctor Specialist</span>
+                </div>
+
+                <div class="bottom-bar">
+                    <div>
+                        <b>☎CONTACT US</b><br> 📞855 99718638
+                    </div>
+
+                    <div>
+                        <b>⏰HOUR STANBY :</b><br> online 24H/7d
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="right">
+
+            <div class="hiring-card">
+
+                <h1>We Are<br>Hiring</h1>
+
+                <button class="start-btn" onclick="openPage2()">START</button>
+
+                <a class="job-link" href="https://alert-items-206176.framer.app/" target="_blank">
+        👉Project Manager
+        </a>
+
+                <div class="job-link">
+                    Social Media Specialist
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==================== PAGE 2 ==================== -->
+
+    <section id="page2">
+
+        <h1 class="page2-title">Surveillance Doctor Evolution</h1>
+
+        <div class="form-container">
+
+            <!-- LEFT -->
+
+            <div class="column">
+
+                <div class="input-group">
+                    <label>**Subjective</label>
+                    <textarea id="subjective"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>**Objective</label>
+                </div>
+
+                <div class="input-group">
+                    <label>-GA</label>
+                    <input id="ga">
+                </div>
+
+                <div class="input-group">
+                    <label>-Consciousness</label>
+                    <input id="consciousness">
+                </div>
+
+                <div class="input-group">
+                    <label>-BP</label>
+                    <input id="bp">
+                </div>
+
+                <div class="input-group">
+                    <label>-RR</label>
+                    <input id="rr">
+                </div>
+
+                <div class="input-group">
+                    <label>-Temperature</label>
+                    <input id="temp">
+                </div>
+
+                <div class="input-group">
+                    <label>-SPO2</label>
+                    <input id="spo2">
+                </div>
+
+                <div class="input-group">
+                    <label>-Lung</label>
+                    <input id="lung">
+                </div>
+
+                <div class="input-group">
+                    <label>-Heart</label>
+                    <input id="heart">
+                </div>
+
+                <div class="input-group">
+                    <label>-Abdomen</label>
+                    <input id="abdomen">
+                </div>
+
+                <div class="input-group">
+                    <label>-Urine</label>
+                    <input id="urine">
+                </div>
+
+                <div class="input-group">
+                    <label>-Stool</label>
+                    <input id="stool">
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="column">
+
+                <div class="input-group">
+                    <label>**Treatment</label>
+                </div>
+
+                <div class="input-group">
+                    <label>-NSS 0.9% 1000mg</label>
+                    <input id="nss">
+                </div>
+
+                <div class="input-group">
+                    <label>-Paracetamol 1g</label>
+                    <input id="paracetamol">
+                </div>
+
+                <div class="input-group">
+                    <label>-Ceftriaxion 1g</label>
+                    <input id="ceftriaxion">
+                </div>
+
+                <div class="input-group">
+                    <label>-Tramadol 50mg</label>
+                    <input id="tramadol">
+                </div>
+
+                <div class="input-group">
+                    <label>-Cimetidine 200mg</label>
+                    <input id="cimetidine">
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="finish-btn" onclick="showResult()">FINISH</button>
+
+    </section>
+
+    <!-- ==================== RESULT PAGE ==================== -->
+
+    <section id="resultPage">
+
+        <div class="notepad">
+
+            <h1>Medical Result Note</h1>
+
+            <div id="resultContent"></div>
+
+        </div>
+
+    </section>
+
+    <script>
+        function openPage2() {
+            document.getElementById("page1").style.display = "none";
+            document.getElementById("page2").style.display = "block";
+        }
+
+        function showResult() {
+
+            const fields = [
+                ["Subjective", "subjective"],
+                ["GA", "ga"],
+                ["Consciousness", "consciousness"],
+                ["BP", "bp"],
+                ["RR", "rr"],
+                ["Temperature", "temp"],
+                ["SPO2", "spo2"],
+                ["Lung", "lung"],
+                ["Heart", "heart"],
+                ["Abdomen", "abdomen"],
+                ["Urine", "urine"],
+                ["Stool", "stool"],
+                ["NSS 0.9% 1000mg", "nss"],
+                ["Paracetamol 1g", "paracetamol"],
+                ["Ceftriaxion 1g", "ceftriaxion"],
+                ["Tramadol 50mg", "tramadol"],
+                ["Cimetidine 200mg", "cimetidine"]
+            ];
+
+            let resultHTML = "";
+
+            fields.forEach(field => {
+
+                let value = document.getElementById(field[1]).value;
+
+                if (value.trim() !== "") {
+
+                    resultHTML += `
+            <div class="result-item">
+            <b>${field[0]} :</b> ${value}
+            </div>
+            `;
+                }
+
+            });
+
+            document.getElementById("resultContent").innerHTML = resultHTML;
+
+            document.getElementById("page2").style.display = "none";
+            document.getElementById("resultPage").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
